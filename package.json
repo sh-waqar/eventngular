@@ -1,6 +1,7 @@
 {
   "name": "eventngular",
   "version": "0.0.0",
+  "author": "sh-waqar <waqar.ali911@gmail.com>",
   "dependencies": {},
   "scripts": {
     "test": "gulp test"
