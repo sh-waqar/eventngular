@@ -2,6 +2,9 @@
   'use strict';
 
   angular
-    .module('eventngular', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr']);
+  	.module('3rdparty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap']);
+
+  angular
+    .module('eventngular', ['3rdparty', 'eventngular.login']);
 
 })();
