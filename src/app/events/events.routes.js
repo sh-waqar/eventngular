@@ -15,12 +15,12 @@
                 controllerAs: 'vm',
                 resolve: {
                   auth: function($state, authService) {
-                      return authService.$requireAuth().catch(function() {
+                      return authService.checkAuth.catch(function() {
                           $state.go('login');
                       });
                   },
                   profile: function(authService) {
-                      return authService.$requireAuth().then(function() {
+                      return authService.checkAuth.then(function() {
                           return 'Users.getProfile(auth.uid).$loaded()';
                       });
                   }

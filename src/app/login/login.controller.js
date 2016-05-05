@@ -14,17 +14,15 @@
             password: ''
         };
 
-        function authenticate() {
-            authService.$authWithPassword(vm.user).then(function(auth) {
-                $log.log(auth);
-                // Redirect to main events dashboard
-                $state.go('eventList');
-            }, function(error) {
-                $log.log(vm.user);
+        vm.error = '';
 
-                vm.error = error;
-                $log.log(error);
-            });
+        function authenticate() {
+            authService.login(vm.user)
+                .then(function(auth) {
+                    console.log(auth);
+                }, function(error) {
+                    vm.error = error;
+                });
         }
 
         function register() {
@@ -35,19 +33,17 @@
             });
         }
 
-        // var ref = new Firebase("https://eventngular.firebaseio.com/");
-        // $log.log(ref);
         function githubAuth() {
-            var ref = new Firebase("https://eventngular.firebaseio.com/");
-            ref.authWithOAuthPopup("google", function(error, authData) {
+            authService.externalLogin("github", function(error, authData) {
                 if (error) {
-                    $log.log("Login Failed!", error);
+                   vm.error = error;
                 } else {
                     $log.log("Authenticated successfully with payload:", authData);
                 }
             });
         }
 
+        ///////////////////////////////////
 
         vm.authenticate = authenticate;
         vm.githubAuth = githubAuth;
