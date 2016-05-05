@@ -1,7 +1,7 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-  	.module('eventngular.events', []);
+    angular
+        .module('eventngular.events', []);
 
 })();

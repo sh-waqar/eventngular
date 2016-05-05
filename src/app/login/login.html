@@ -6,10 +6,14 @@
                     <img src="../assets/images/angular.png">
                 </div>
             </div>
-            <form>
+            <form ng-submit="vm.authenticate()">
                 <div class="form-group">
                     <label for="IuserName">Email address</label>
-                    <input type="email" class="form-control" id="IuserName" placeholder="Enter your Email Address">
+                    <input  type="email" 
+                            class="form-control" 
+                            id="IuserName" 
+                            ng-model="vm.user.email"
+                            placeholder="Enter your Email Address">
                 </div>
                 <div class="form-group">
                     <div class="pull-left">
@@ -20,9 +24,11 @@
                             <input type="checkbox"> Remember me
                         </label>
                     </div>
-                    <input type="password" class="form-control" id="Ipassword" placeholder="Enter your Password">
-                </div>
-                <div class="checkbox">
+                    <input  type="password" 
+                            class="form-control" 
+                            id="Ipassword" 
+                            ng-model="vm.user.password"
+                            placeholder="Enter your Password">
                 </div>
                 <button type="submit" class="btn btn-success btn-block">Login</button>
             </form>
@@ -37,6 +43,7 @@
                     <a href="#" ui-sref="signup">Sign Up</a>
                 </div>
             </div>
+            <button ng-click="vm.githubAuth()">Github</button>
         </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
   'use strict';
 
   describe('controllers', function(){
-    var vm;
+    // var vm;
 
     beforeEach(module('eventngular'));
     // beforeEach(inject(function(_$controller_, _$timeout_, _webDevTec_, _toastr_) {

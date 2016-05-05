@@ -4,6 +4,7 @@
 
   angular
     .module('eventngular')
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('FirebaseUrl', 'https://eventngular.firebaseio.com/');
 
 })();

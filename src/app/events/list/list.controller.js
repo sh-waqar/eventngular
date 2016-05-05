@@ -37,11 +37,12 @@
         }];
 
         vm.createEvent = function() {
-
-            var modalInstance = $uibModal.open({
+            $uibModal.open({
                 animation: true,
                 templateUrl: 'app/events/create/create.html',
                 controller: 'CreateController',
+                controllerAs: 'vm',
+                bindToController: true,
                 size: 'large'
             });
         };

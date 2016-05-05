@@ -9,5 +9,6 @@
     function DetailsController() {
         var vm = this;
 
+        vm.justToAddSomething = '';
     }
 })();

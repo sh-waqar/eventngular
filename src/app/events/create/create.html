@@ -3,16 +3,41 @@
 </div>
 <div class="modal-body">
     <form>
-        <fieldset class="form-group row">
-            <div class="col-sm-6">
-                <label for="IeventName" class="form-control-label p-l-0">Event name</label>
-                <input type="name" class="form-control" id="IeventName" placeholder="Enter your event name">
+        <div class="form-group row">
+            <label for="IeventName" class="col-sm-3 form-control-label">Event Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="IeventName" placeholder="Give a clear name to your event" required>
             </div>
-            <div class="col-sm-6">
-                <label for="IeventType" class="form-control-label p-l-0">Event Type</label>
-                <input type="password" class="form-control" id="IeventType" placeholder="Enter your event type">
+        </div>
+        <div class="form-group row">
+            <label for="IeventType" class="col-sm-3 form-control-label">Event Type</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="IeventType" placeholder="Set the type of event" required>
             </div>
-        </fieldset>
+        </div>
+        <div class="form-group row">
+            <label for="IeventLocation" class="col-sm-3 form-control-label">Location</label>
+            <div class="col-sm-9">
+                <input type="time" class="form-control" id="IeventLocation" placeholder="Set the event location" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="IeventDateTime" class="col-sm-3 form-control-label">Event Date/Time</label>
+            <div class="col-sm-9">
+                <input  type="date" 
+                        id="IeventDateTime" 
+                        class="form-control" 
+                        uib-datepicker-popup="yyyy-MM-dd" 
+                        ng-model="vm.startDate" 
+                        is-open="vm.startDateOpen" 
+                        ng-click="vm.openStartDate()"
+                        datepicker-options="vm.startDateOptions" 
+                        ng-required="true" 
+                        alt-input-formats="altInputFormats" 
+                        show-button-bar="false"
+                        min-date="vm.today"/>
+            </div>
+        </div>
     </form>
 </div>
 <div class="modal-footer">
